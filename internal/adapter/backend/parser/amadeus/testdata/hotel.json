@@ -1,0 +1,57 @@
+{
+  "data": {
+    "type": "aggregated-trip",
+    "id": "jobidbooking",
+    "self": {
+      "methods": [
+        "GET"
+      ],
+      "href": "https://test.api.amadeus.com/v2/travel/trip-parser-jobs/jobidbooking/result"
+    },
+    "reference": "XXX9UT",
+    "creation": {
+      "dateTime": "2020-02-18T00:00:00"
+    },
+    "products": [
+      {
+        "hotel": {
+          "creation": {
+            "dateTime": "2020-02-18T14:41:14"
+          },
+          "status": "HK",
+          "NIP": 1,
+          "serviceProvider": {
+            "name": "La Badira - Adult Only"
+          },
+          "start": {
+            "dateTime": "2020-04-07",
+            "address": {
+              "lines": [
+                "Hammamet, 8050, Tunisia"
+              ],
+              "cityName": "Hammamet"
+            }
+          },
+          "end": {
+            "dateTime": "2020-04-11"
+          }
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "roles": [
+          "TRAVELLER"
+        ],
+        "names": [
+          {
+            "type": "UN",
+            "isRef": true,
+            "firstName": "JOHN",
+            "lastName": "SMITH"
+          }
+        ]
+      }
+    ]
+  }
+}

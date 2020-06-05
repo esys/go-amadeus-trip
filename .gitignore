@@ -1,0 +1,12 @@
+.idea
+/client_credentials.json
+/config.yaml
+/gmail_token.json
+
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
