@@ -72,8 +72,8 @@ func saveToken(path string, token *oauth2.Token) {
 func main() {
 	var credentials string
 	var output string
-	flag.StringVar(&credentials, "credentials", "client_credentials.json","credentials json file location")
-	flag.StringVar(&output, "output", "gmail_token.json","output file for token")
+	flag.StringVar(&credentials, "credentials", "client_credentials.json", "credentials json file location")
+	flag.StringVar(&output, "output", "gmail_token.json", "output file for token")
 	flag.Parse()
 
 	b, err := ioutil.ReadFile(credentials)

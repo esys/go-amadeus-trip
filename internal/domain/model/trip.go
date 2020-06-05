@@ -26,4 +26,3 @@ type Trip struct {
 	End       time.Time
 	TripSteps []TripStep
 }
-

@@ -12,4 +12,3 @@ type TripRepository interface {
 	GetOne(query model.Trip) (model.Trip, error)
 	Create(trip *model.Trip) error
 }
-

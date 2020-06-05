@@ -112,5 +112,3 @@ func (g *client) GetEmails(filter string) []*model.Email {
 	}
 	return ms
 }
-
-

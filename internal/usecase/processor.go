@@ -12,7 +12,7 @@ type emailProcessor struct {
 	parser         domain.EmailParser
 	repo           domain.TripRepository
 	parserInterval time.Duration
-	mailInterval time.Duration
+	mailInterval   time.Duration
 	emails         chan *model.Email
 	toRefresh      chan *model.EmailParsingJob
 	resultReady    chan *model.EmailParsingJob

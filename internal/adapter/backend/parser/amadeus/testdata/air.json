@@ -1,114 +1,130 @@
 {
-  "data" : {
-    "type" : "aggregated-trip",
-    "id" : "xxx",
-    "self" : {
-      "methods" : [ "GET" ],
-      "href" : "https://api.amadeus.com/v2/travel/trip-parser-jobs/xxx/result"
+  "data": {
+    "type": "aggregated-trip",
+    "id": "xxx",
+    "self": {
+      "methods": [
+        "GET"
+      ],
+      "href": "https://api.amadeus.com/v2/travel/trip-parser-jobs/xxx/result"
     },
-    "reference" : "XXX999",
-    "creation" : {
-      "dateTime" : "2020-05-30T00:00:00"
+    "reference": "XXX999",
+    "creation": {
+      "dateTime": "2020-05-30T00:00:00"
     },
-    "products" : [ {
-      "air" : {
-        "bkgChannel" : {
-          "description" : "Transavia"
-        },
-        "creation" : {
-          "dateTime" : "2020-05-30T12:36:37"
-        },
-        "status" : "HK",
-        "NIP" : 2,
-        "confirmNbr" : "L9L99L",
-        "serviceProvider" : {
-          "code" : "TO",
-          "name" : "TRANSAVIA FRANCE",
-          "baggagePolicyLink" : "https://bags.amadeus.com/Display.aspx?a=TO"
-        },
-        "identifier" : {
-          "number" : "3436"
-        },
-        "start" : {
-          "dateTime" : "2020-04-06T16:10:00",
-          "locationName" : "Orly",
-          "airportName" : "PARIS ORLY",
-          "locationCode" : "ORY",
-          "address" : {
-            "countryCode" : "FR",
-            "cityName" : "PARIS"
-          }
-        },
-        "end" : {
-          "dateTime" : "2020-04-06T17:45:00",
-          "locationName" : "Carthage",
-          "airportName" : "TUNIS CARTHAGE",
-          "locationCode" : "TUN",
-          "address" : {
-            "countryCode" : "TN",
-            "cityName" : "TUNIS"
-          }
-        },
-        "duration" : "PT02H35M"
+    "products": [
+      {
+        "air": {
+          "bkgChannel": {
+            "description": "Transavia"
+          },
+          "creation": {
+            "dateTime": "2020-05-30T12:36:37"
+          },
+          "status": "HK",
+          "NIP": 2,
+          "confirmNbr": "L9L99L",
+          "serviceProvider": {
+            "code": "TO",
+            "name": "TRANSAVIA FRANCE",
+            "baggagePolicyLink": "https://bags.amadeus.com/Display.aspx?a=TO"
+          },
+          "identifier": {
+            "number": "3436"
+          },
+          "start": {
+            "dateTime": "2020-04-06T16:10:00",
+            "locationName": "Orly",
+            "airportName": "PARIS ORLY",
+            "locationCode": "ORY",
+            "address": {
+              "countryCode": "FR",
+              "cityName": "PARIS"
+            }
+          },
+          "end": {
+            "dateTime": "2020-04-06T17:45:00",
+            "locationName": "Carthage",
+            "airportName": "TUNIS CARTHAGE",
+            "locationCode": "TUN",
+            "address": {
+              "countryCode": "TN",
+              "cityName": "TUNIS"
+            }
+          },
+          "duration": "PT02H35M"
+        }
+      },
+      {
+        "air": {
+          "bkgChannel": {
+            "description": "Transavia"
+          },
+          "creation": {
+            "dateTime": "2020-05-30T12:36:37"
+          },
+          "status": "HK",
+          "NIP": 2,
+          "confirmNbr": "L9L99L",
+          "serviceProvider": {
+            "code": "TO",
+            "name": "TRANSAVIA FRANCE",
+            "baggagePolicyLink": "https://bags.amadeus.com/Display.aspx?a=TO"
+          },
+          "identifier": {
+            "number": "4733"
+          },
+          "start": {
+            "dateTime": "2020-04-12T11:55:00",
+            "locationName": "Carthage",
+            "airportName": "TUNIS CARTHAGE",
+            "locationCode": "TUN",
+            "address": {
+              "countryCode": "TN",
+              "cityName": "TUNIS"
+            }
+          },
+          "end": {
+            "dateTime": "2020-04-12T15:30:00",
+            "locationName": "Orly",
+            "airportName": "PARIS ORLY",
+            "locationCode": "ORY",
+            "address": {
+              "countryCode": "FR",
+              "cityName": "PARIS"
+            }
+          },
+          "duration": "PT02H35M"
+        }
       }
-    }, {
-      "air" : {
-        "bkgChannel" : {
-          "description" : "Transavia"
-        },
-        "creation" : {
-          "dateTime" : "2020-05-30T12:36:37"
-        },
-        "status" : "HK",
-        "NIP" : 2,
-        "confirmNbr" : "L9L99L",
-        "serviceProvider" : {
-          "code" : "TO",
-          "name" : "TRANSAVIA FRANCE",
-          "baggagePolicyLink" : "https://bags.amadeus.com/Display.aspx?a=TO"
-        },
-        "identifier" : {
-          "number" : "4733"
-        },
-        "start" : {
-          "dateTime" : "2020-04-12T11:55:00",
-          "locationName" : "Carthage",
-          "airportName" : "TUNIS CARTHAGE",
-          "locationCode" : "TUN",
-          "address" : {
-            "countryCode" : "TN",
-            "cityName" : "TUNIS"
+    ],
+    "stakeholders": [
+      {
+        "roles": [
+          "TRAVELLER"
+        ],
+        "names": [
+          {
+            "type": "UN",
+            "isRef": true,
+            "firstName": "JOHN",
+            "lastName": "SMITH"
           }
-        },
-        "end" : {
-          "dateTime" : "2020-04-12T15:30:00",
-          "locationName" : "Orly",
-          "airportName" : "PARIS ORLY",
-          "locationCode" : "ORY",
-          "address" : {
-            "countryCode" : "FR",
-            "cityName" : "PARIS"
+        ]
+      },
+      {
+        "roles": [
+          "TRAVELLER"
+        ],
+        "names": [
+          {
+            "type": "UN",
+            "isRef": true,
+            "firstName": "MARY",
+            "lastName": "SMITH"
           }
-        },
-        "duration" : "PT02H35M"
+        ]
       }
-    } ],
-    "stakeholders" : [ {
-      "roles" : [ "TRAVELLER" ],
-      "names" : [ {
-        "type" : "UN",
-        "isRef" : true,
-        "firstName" : "JOHN",
-        "lastName" : "SMITH"
-      } ]
-    }, {
-      "roles" : [ "TRAVELLER" ],
-      "names" : [ {
-        "type" : "UN",
-        "isRef" : true,
-        "firstName" : "MARY",
-        "lastName" : "SMITH"
-      } ]
-    } ]
+    ]
   }
 }
