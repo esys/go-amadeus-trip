@@ -51,7 +51,7 @@ func (e *emailProcessor) fetchEmail() {
 		emails := e.provider.GetEmails("is:unread")
 		select {
 		case <-e.done:
-			close(e.done)
+			close(e.emails)
 			return
 		default:
 			for _, em := range emails {
