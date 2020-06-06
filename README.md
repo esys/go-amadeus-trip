@@ -1,9 +1,9 @@
 # Trip Parser
 
 This project illustrates the use of [Amadeus Trip API](https://developers.amadeus.com/self-service/category/trip/api-doc/trip-parser) to parse emails and extract travel information from it.
-The results are then made available through a REST API.
+Travel information is then written in a SQLite3 database and made available through a REST API.
 
-![alt text](https://github.com/esys/go-amadeus-trip/tree/master/doc/flowchart.svg?raw=true)
+![alt text](https://github.com/esys/go-amadeus-trip/tree/master/doc/flowchart.png?raw=true)
 
 ## Requirements
 
@@ -31,6 +31,87 @@ Or use environment variables (they take precedence over the configuration file)
 
 ## Running
 
+Build and run it directly
 ```
-go run cmd/parser/main.go
+$ make run
 ```
+
+Or Build and run it as a docker image
+```
+$ make docker-build docker-run
+```
+
+Check logs in stdout to see if processing is going OK. 
+```
+2:02PM DBG trip 95ed6a4c-3910-4bce-8f06-0d2b2ea1d344 (ref: UCFRMZ) written in repository
+```
+
+To check for results, query the API
+```
+$ curl "http://localhost:1323"
+[{"ID":"95ed6a4c-3910-4bce-8f06-0d2b2ea1d344","Reference":"UCFRMZ" .... }]
+
+$ curl "http://localhost:1323/trip?ref=UCFRMZ"
+{"ID":"95ed6a4c-3910-4bce-8f06-0d2b2ea1d344","Reference":"UCFRMZ","Start":"0001-01-01T00:00:00Z","End":"0001-01-01T00:00:00Z","TripSteps":[{"ID":"1ef923bb-10af-44b7-8022-65c7aae805b3","TripID":"95ed6a4c-3910-4bce-8f06-0d2b2ea1d344","Type":"flight-end","DateTime":"2020-04-12T15:30:00Z","Location":"PARIS","Description":"Flight end with TRANSAVIA FRANCE"},{"ID":"49c85155-4ad5-493e-973b-ec4a939b7a18","TripID":"95ed6a4c-3910-4bce-8f06-0d2b2ea1d344","Type":"flight-start","DateTime":"2020-04-12T11:55:00Z","Location":"TUNIS","Description":"Flight start with TRANSAVIA FRANCE"},{"ID":"df9b3b22-e797-467c-9e71-7ee6d13bb787","TripID":"95ed6a4c-3910-4bce-8f06-0d2b2ea1d344","Type":"flight-end","DateTime":"2020-04-06T17:45:00Z","Location":"TUNIS","Description":"Flight end with TRANSAVIA FRANCE"},{"ID":"ef983fa6-1222-4e2f-9315-9355895570a3","TripID":"95ed6a4c-3910-4bce-8f06-0d2b2ea1d344","Type":"flight-start","DateTime":"2020-04-06T16:10:00Z","Location":"PARIS","Description":"Flight start with TRANSAVIA FRANCE"}]}
+```
+
+## Code
+
+Code organization follows the [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) guidelines.
+- `domain` contains only models and interfaces
+- `usecase` contains application logic
+- `adapter` is for interface implementations and communication with external world
+
+```
+.
+├── adapter
+│   ├── api
+│   │   ├── rest.go
+│   │   └── rest_test.go
+│   ├── backend
+│   │   ├── mail
+│   │   │   └── gmail
+│   │   │       ├── gmail.go
+│   │   │       └── gmail_test.go
+│   │   └── parser
+│   │       └── amadeus
+│   │           ├── amadeus.go
+│   │           ├── amadeus_test.go
+│   │           ├── converter.go
+│   │           ├── converter_test.go
+│   │           ├── dto.go
+│   │           ├── dto_test.go
+│   │           └── testdata
+│   │               ├── air.json
+│   │               ├── hotel.json
+│   │               └── msg-encoded
+│   └── repository
+│       ├── sqlite.go
+│       └── sqlite_test.go
+├── domain
+│   ├── backend.go
+│   ├── mocks
+│   │   ├── TripFinder.go
+│   │   └── TripRepository.go
+│   ├── model
+│   │   ├── email.go
+│   │   └── trip.go
+│   ├── repository.go
+│   └── usecase.go
+└── usecase
+    ├── processor.go
+    ├── tripfinder.go
+    └── tripfinder_test.go
+
+```
+
+
+## Dependencies
+
+This project makes use of:
+- [Echo](https://github.com/labstack/echo) : minimalist Go web framework
+- [Gorm](https://github.com/go-gorm/gorm) : ORM library
+- [Zerolog](https://github.com/rs/zerolog) : JSON Logger
+- [Viper](https://github.com/spf13/viper) : configuration
+- [Testify](https://github.com/stretchr/testify) : test assertion and mocks
+- [Mockery](https://github.com/vektra/mockery): mock object generator
