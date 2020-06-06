@@ -3,12 +3,12 @@
 This project illustrates the use of [Amadeus Trip API](https://developers.amadeus.com/self-service/category/trip/api-doc/trip-parser) to parse emails and extract travel information from it.
 Travel information is then written in a SQLite3 database and made available through a REST API.
 
-![alt text](https://github.com/esys/go-amadeus-trip/tree/master/doc/flowchart.png?raw=true)
+![alt text](doc/flowchart.svg?raw=true)
 
 ## Requirements
 
 You will need:
-- to [create an AWS Self-Service account](https://developers.amadeus.com/register) and create an API key, please see the [FAQ](https://developers.amadeus.com/support/faq/)
+- to [create an Amadeus Self-Service account](https://developers.amadeus.com/register) and create an API key, please see the [FAQ](https://developers.amadeus.com/support/faq/)
 - a GMail API access, follow through the [Go Quickstart](https://developers.google.com/gmail/api/quickstart/go), you should get back a credentials and token JSON files
 
 ## Configuration

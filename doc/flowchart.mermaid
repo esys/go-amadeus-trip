@@ -8,8 +8,7 @@ sequenceDiagram
     BG ->> M: retrieve emails
     BG ->> A: post new parsing job
     BG ->> A: refresh job status
-    BG ->> D: write results
     BG ->> A: get job results
+    BG ->> D: write results
   end
   BG ->> GA: expose trip information
-
