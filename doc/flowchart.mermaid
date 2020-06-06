@@ -1,12 +1,15 @@
 sequenceDiagram
-    participant GA as go-amadeus-trip<br>API
-    participant BG as go-amadeus-trip<br>backgroundprocess
-    participant M as GMail
-    participant A as Amadeus
-    loop every x seconds
+  participant GA as go-amadeus-trip<br>API
+  participant BG as go-amadeus-trip<br>background process
+  participant M as GMail
+  participant A as Amadeus
+  participant D as SQLite
+  loop every x seconds
     BG ->> M: retrieve emails
     BG ->> A: post new parsing job
     BG ->> A: refresh job status
+    BG ->> D: write results
     BG ->> A: get job results
-    end
-    BG ->> GA: expose trip information
+  end
+  BG ->> GA: expose trip information
+
