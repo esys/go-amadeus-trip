@@ -1,0 +1,11 @@
+api:
+  listen: ":1323"
+parser:
+  key: <AMADEUS KEY>
+  secret: <AMADEUS SECRET>
+  url: https://test.api.amadeus.com
+mail:
+  credentials: client_credentials.json
+  token: gmail_token.json
+storage:
+  name: ":memory:"
