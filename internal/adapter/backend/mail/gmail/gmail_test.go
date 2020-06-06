@@ -9,6 +9,10 @@ const credentials = "../../../../client_credentials.json"
 const token = "../../../../gmail_token.json"
 
 func TestNewGMailClient(t *testing.T) {
+	if testing.Short() {
+		return
+	}
+
 	type args struct {
 		credFile  string
 		tokenFile string

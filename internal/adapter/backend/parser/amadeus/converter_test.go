@@ -125,7 +125,7 @@ func Test_converter_getTrip(t *testing.T) {
 				readResponseData("testdata/air.json", t),
 			},
 			want: model.Trip{
-				Reference: "JKW499",
+				Reference: "XXX999",
 				TripSteps: []model.TripStep{
 					{
 						Type:     model.TripStepTypeFlightStart,
@@ -141,7 +141,7 @@ func Test_converter_getTrip(t *testing.T) {
 					},
 					{
 						Type:     model.TripStepTypeFlightEnd,
-						DateTime: time.Date(2021, 04, 12, 15, 30, 00, 0, time.UTC),
+						DateTime: time.Date(2020, 04, 12, 15, 30, 00, 0, time.UTC),
 					},
 				},
 			},

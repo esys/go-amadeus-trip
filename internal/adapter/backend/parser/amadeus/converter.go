@@ -32,7 +32,7 @@ func (addrConverter) String(a Address) string {
 		if a.CountryName != "" {
 			s = append(s, a.CountryName)
 		}
-		txt = strings.Join(s, ",")
+		txt = strings.Join(s, ", ")
 	default:
 		txt = ""
 	}
