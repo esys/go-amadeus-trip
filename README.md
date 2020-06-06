@@ -21,13 +21,13 @@ Or use environment variables (they take precedence over the configuration file)
 
 |Name               |Description                        |Example                        |
 |---                |---                                |---                            |
-|api.listen         |server:port on which API listens   |:1323                          |
-|parser.key         |Amadeus API key                    |yRveyxreiof83ID2FlldsfgIW95    |
-|parser.secret      |Amadeus API secret                 |d5Gtof7Q4pxlI8KGH              |
-|parser.url         |Amadeus API endpoint               |https://test.api.amadeus.com   |
-|mail.credentials   |GMail client credentials JSON file |client_credentials.json        |
-|mail.token         |GMail token JSON file              |gmail_token.json               |
-|storage.name       |SQLite database name               |:memory:                       |
+|API_LISTEN         |server:port on which API listens   |:1323                          |
+|PARSER_KEY         |Amadeus API key                    |yRveyxreiof83ID2FlldsfgIW95    |
+|PARSER_SECRET      |Amadeus API secret                 |d5Gtof7Q4pxlI8KGH              |
+|PARSER_URL         |Amadeus API endpoint               |https://test.api.amadeus.com   |
+|MAIL_CREDENTIALS   |GMail client credentials JSON file |client_credentials.json        |
+|MAIL_TOKEN         |GMail token JSON file              |gmail_token.json               |
+|STORAGE_NAME       |SQLite database name               |:memory:                       |
 
 ## Running
 
