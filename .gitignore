@@ -1,4 +1,5 @@
 .idea
+/bin
 /client_credentials.json
 /config.yaml
 /gmail_token.json
