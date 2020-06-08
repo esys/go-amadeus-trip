@@ -1,10 +1,22 @@
 # Trip Parser
 
 This project illustrates the use of [Amadeus Trip API](https://developers.amadeus.com/self-service/category/trip/api-doc/trip-parser) to parse emails and extract travel information from it.
-Travel information is then written in a SQLite3 database and made available through a REST API.
+
+  * [Requirements](#requirements)
+  * [Configuration](#configuration)
+  * [Running](#running)
+  * [Code](#code)
+  * [Dependencies](#dependencies)
+
+## How does it work
+
+The go process retrieve mails by polling a Gmail inbox and then process them using the [Amadeus TRIP API](https://developers.amadeus.com/self-service/category/trip/api-doc/trip-parser), 
+first by creating a parsing job, then by querying the status to eventually get the results.
+
+Extracted travel information is stored into a SQLite3 database and made available through a REST API.
 
 ![alt text](doc/flowchart.svg?raw=true)
-
+  
 ## Requirements
 
 You will need:
