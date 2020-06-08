@@ -103,7 +103,7 @@ type TripPoint struct {
 	DateTime     Time    `json:"dateTime"`
 	LocationName string  `json:"locationName"`
 	LocationCode string  `json:"locationCode"`
-	Address      Address `json:"Address"`
+	Address      Address `json:"address"`
 }
 
 type Address struct {
@@ -167,7 +167,7 @@ type HotelProduct struct {
 	Start struct {
 		DateTime     Time    `json:"dateTime"`
 		LocationCode string  `json:"locationCode"`
-		Address      Address `json:"Address"`
+		Address      Address `json:"address"`
 		Contact      struct {
 			Phone string `json:"phone"`
 		} `json:"contact"`
