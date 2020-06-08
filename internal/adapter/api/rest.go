@@ -25,7 +25,7 @@ func (a *tripAPI) Get(c echo.Context) error {
 	if ref == "" {
 		trips, err := a.tripFinder.Get()
 		if err != nil {
-			return err
+			return echo.NewHTTPError(StatusInternalServerError, err)
 		}
 		return c.JSON(StatusOK, trips)
 	}
